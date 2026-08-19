@@ -1,0 +1,250 @@
+:root {
+    --bg-primary: #f4efe6;
+    --bg-card: #ffffff;
+    --text-main: #2d3748;
+    --accent-green: #2e7d32;
+    --accent-soft: #e8f5e9;
+    --accent-amber: #d97706;
+    --accent-red: #dc2626;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: #1e1e24;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* Container do Slide */
+.slide {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+/* Capa */
+.slide.cover {
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cover h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.cover h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.cover-subtitle {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Estilo dos Títulos */
+.slide-header {
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.slide-header h2 {
+    font-size: 1.8rem;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slide-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Grid layouts e Utility Classes */
+.grid-2 {
+    display: flex;
+    gap: 20px;
+}
+
+.grid-2 > div {
+    flex: 1;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-green);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card.border-amber {
+    border-left-color: var(--accent-amber);
+}
+
+.card.border-red {
+    border-left-color: var(--accent-red);
+}
+
+.card h3 {
+    color: var(--accent-green);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.card p, .card ul {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.conclusion-card {
+    background-color: var(--accent-soft);
+    border-left-width: 8px;
+    padding: 30px;
+}
+
+.conclusion-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.conclusion-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-position: inside;
+    margin-top: 5px;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Mitos e Verdades */
+.mito-box {
+    background-color: #fef2f2;
+    border-left: 5px solid #ef4444;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.verdade-box {
+    background-color: #f0fdf4;
+    border-left: 5px solid #22c55e;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.tag-mito { color: #dc2626; }
+.tag-verdade { color: #16a34a; }
+
+/* Rodapé do Slide */
+.slide-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #718096;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+/* Video Container */
+.video-description {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilo para Impressão / PDF */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+    .slide {
+        box-shadow: none;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
